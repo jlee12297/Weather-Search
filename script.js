@@ -85,9 +85,45 @@ fetch(weatherUrl)
     //=======================================================================================================================
     //Weather API pulls to pull date for FORECASTED days
     console.log(data.daily)
-    for (index = 1; index < 6; index++) {
-        forecastData = data.daily[i];
+    for (i = 0; i < 5; i++) {
+        forecastDat0 = data.daily[i];
         
+        //converting unix forecast into forecast date
+        forecastDate = data.daily[i].dt;
+        forecastDate2 = moment.unix(forecastDate).format("L");
+        convertedForecastDate = forecastDate2;
+
+        forecastTemp = data.daily[i].temp.day;
+        forecastWindspeed = data.daily[i].wind_speed;
+        forecastHumidity = data.daily[i].humidity;
+        currentWeatherIcon = data.daily[i].weather[0].icon;    
+        
+        //display current date and time in the appropriate cards, learned to use switch
+        switch(i) {
+            case 0:
+                document.getElementById("forecast1Date").textContent = convertedForecastDate;
+            break;
+
+            case 1:
+                document.getElementById("forecast2Date").textContent = convertedForecastDate;
+            break;
+
+            case 2:
+                document.getElementById("forecast3Date").textContent = convertedForecastDate;
+            break;
+
+            case 3:
+                document.getElementById("forecast4Date").textContent = convertedForecastDate;
+            break;
+
+            case 4:
+                document.getElementById("forecast5Date").textContent = convertedForecastDate;
+            break;
+
+            default:
+                break;
+    }
+
     }
 
   });
