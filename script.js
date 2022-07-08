@@ -72,24 +72,16 @@ fetch(weatherUrl)
     document.getElementById('currentIcon').appendChild(currentWeatherImage);
 
     //display current temperaure fahrenheit
-    displayCurrentTemp = document.createElement('li');
-    document.getElementById('currentStats').appendChild(displayCurrentTemp);
-    displayCurrentTemp.textContent = "Temp: " + currentTemp + " °F"
+    document.getElementById('currentTemp').textContent = "Temp: " + currentTemp + " °F"
 
     //display current windspeed
-    displayCurrentWindspeed = document.createElement('li');
-    document.getElementById('currentStats').appendChild(displayCurrentWindspeed);
-    displayCurrentWindspeed.textContent = "Windspeed: " + currentWindspeed + " MPH"
+    document.getElementById('currentWindspeed').textContent = "Windspeed: " + currentWindspeed + " MPH"
 
     //display current humidity
-    displayCurrentHumidity = document.createElement('li');
-    document.getElementById('currentStats').appendChild(displayCurrentHumidity);
-    displayCurrentHumidity.textContent = "Humidity: " + currentHumidity + " %"
+    document.getElementById('currentHumidity').textContent = "Humidity: " + currentHumidity + " %"
 
     //display current UVI
-    displayCurrentUVI = document.createElement('li');
-    document.getElementById('currentStats').appendChild(displayCurrentUVI);
-    displayCurrentUVI.textContent = "UVI Index: " + currentWindspeed
+    document.getElementById('currentUVI').textContent = "UV Index: " + currentUVI
 
     //=======================================================================================================================
     //Weather API pulls to pull date for FORECASTED days
@@ -119,85 +111,45 @@ fetch(weatherUrl)
                 document.getElementById("forecast1Date").textContent = convertedForecastDate;
                 document.getElementById('forecast1Icon').appendChild(forecastWeatherImage);
 
-                displayForecastTemp = document.createElement('li');
-                document.getElementById('forecast1Stats').appendChild(displayForecastTemp);
-                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
-
-                displayForecastWindspeed = document.createElement('li');
-                document.getElementById('forecast1Stats').appendChild(displayForecastWindspeed);
-                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
-
-                displayForecastHumidity = document.createElement('li');
-                document.getElementById('forecast1Stats').appendChild(displayForecastHumidity);
-                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
+                document.getElementById('f1Temp').textContent = "Temp: " + forecastTemp + " °F"
+                document.getElementById('f1Windspeed').textContent = "Windspeed: " + forecastWindspeed + " MPH"
+                document.getElementById('f1Humidity').textContent = "Humidity: " + forecastHumidity + " %"  
             break;
 
             case 1:
                 document.getElementById("forecast2Date").textContent = convertedForecastDate;
                 document.getElementById('forecast2Icon').appendChild(forecastWeatherImage);
 
-                displayForecastTemp = document.createElement('li');
-                document.getElementById('forecast2Stats').appendChild(displayForecastTemp);
-                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
-
-                displayForecastWindspeed = document.createElement('li');
-                document.getElementById('forecast2Stats').appendChild(displayForecastWindspeed);
-                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
-
-                displayForecastHumidity = document.createElement('li');
-                document.getElementById('forecast2Stats').appendChild(displayForecastHumidity);
-                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
+                document.getElementById('f2Temp').textContent = "Temp: " + forecastTemp + " °F"
+                document.getElementById('f2Windspeed').textContent = "Windspeed: " + forecastWindspeed + " MPH"
+                document.getElementById('f2Humidity').textContent = "Humidity: " + forecastHumidity + " %"   
             break;
 
             case 2:
                 document.getElementById("forecast3Date").textContent = convertedForecastDate;
                 document.getElementById('forecast3Icon').appendChild(forecastWeatherImage);
 
-                displayForecastTemp = document.createElement('li');
-                document.getElementById('forecast3Stats').appendChild(displayForecastTemp);
-                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
-
-                displayForecastWindspeed = document.createElement('li');
-                document.getElementById('forecast3Stats').appendChild(displayForecastWindspeed);
-                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
-
-                displayForecastHumidity = document.createElement('li');
-                document.getElementById('forecast3Stats').appendChild(displayForecastHumidity);
-                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
+                document.getElementById('f3Temp').textContent = "Temp: " + forecastTemp + " °F"
+                document.getElementById('f3Windspeed').textContent = "Windspeed: " + forecastWindspeed + " MPH"
+                document.getElementById('f3Humidity').textContent = "Humidity: " + forecastHumidity + " %"  
             break;
 
             case 3:
                 document.getElementById("forecast4Date").textContent = convertedForecastDate;
                 document.getElementById('forecast4Icon').appendChild(forecastWeatherImage);
 
-                displayForecastTemp = document.createElement('li');
-                document.getElementById('forecast4Stats').appendChild(displayForecastTemp);
-                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
-
-                displayForecastWindspeed = document.createElement('li');
-                document.getElementById('forecast4Stats').appendChild(displayForecastWindspeed);
-                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
-
-                displayForecastHumidity = document.createElement('li');
-                document.getElementById('forecast4Stats').appendChild(displayForecastHumidity);
-                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
+                document.getElementById('f4Temp').textContent = "Temp: " + forecastTemp + " °F"
+                document.getElementById('f4Windspeed').textContent = "Windspeed: " + forecastWindspeed + " MPH"
+                document.getElementById('f4Humidity').textContent = "Humidity: " + forecastHumidity + " %"  
             break;
 
             case 4:
                 document.getElementById("forecast5Date").textContent = convertedForecastDate;
                 document.getElementById('forecast5Icon').appendChild(forecastWeatherImage);
 
-                displayForecastTemp = document.createElement('li');
-                document.getElementById('forecast5Stats').appendChild(displayForecastTemp);
-                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
-
-                displayForecastWindspeed = document.createElement('li');
-                document.getElementById('forecast5Stats').appendChild(displayForecastWindspeed);
-                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
-
-                displayForecastHumidity = document.createElement('li');
-                document.getElementById('forecast5Stats').appendChild(displayForecastHumidity);
-                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
+                document.getElementById('f5Temp').textContent = "Temp: " + forecastTemp + " °F"
+                document.getElementById('f5Windspeed').textContent = "Windspeed: " + forecastWindspeed + " MPH"
+                document.getElementById('f5Humidity').textContent = "Humidity: " + forecastHumidity + " %"  
             break;
 
             default:
