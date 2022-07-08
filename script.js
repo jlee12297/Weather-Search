@@ -59,5 +59,11 @@ fetch(weatherUrl)
     console.log(currentWeatherIcon);
 
     document.getElementById("currentDate").textContent = currentDate;
-    document.getElementById("currentIcon").textContent = currentWeatherIcon;
+
+    src = 'http://openweathermap.org/img/wn/' + currentWeatherIcon + '@2x.png';
+    currentWeatherImage = document.createElement('img');
+    currentWeatherImage.src = src;
+
+ 
+    document.getElementById('currentIcon').appendChild(currentWeatherImage);
   });
