@@ -96,34 +96,105 @@ fetch(weatherUrl)
         forecastTemp = data.daily[i].temp.day;
         forecastWindspeed = data.daily[i].wind_speed;
         forecastHumidity = data.daily[i].humidity;
-        currentWeatherIcon = data.daily[i].weather[0].icon;    
+        forecastWeatherIcon = data.daily[i].weather[0].icon;    
         
-        //display current date and time in the appropriate cards, learned to use switch
+        //fetch FORECASTED weather conditions icon
+        forecastimagesrc = 'http://openweathermap.org/img/wn/' + forecastWeatherIcon + '@2x.png';
+        forecastWeatherImage = document.createElement('img');
+        forecastWeatherImage.src = forecastimagesrc;
+
+        
+  //display forecast elements in appropriate cards, learned to use switch
         switch(i) {
             case 0:
                 document.getElementById("forecast1Date").textContent = convertedForecastDate;
+                document.getElementById('forecast1Icon').appendChild(forecastWeatherImage);
+
+                displayForecastTemp = document.createElement('li');
+                document.getElementById('forecast1Stats').appendChild(displayForecastTemp);
+                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
+
+                displayForecastWindspeed = document.createElement('li');
+                document.getElementById('forecast1Stats').appendChild(displayForecastWindspeed);
+                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
+
+                displayForecastHumidity = document.createElement('li');
+                document.getElementById('forecast1Stats').appendChild(displayForecastHumidity);
+                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
             break;
 
             case 1:
                 document.getElementById("forecast2Date").textContent = convertedForecastDate;
+                document.getElementById('forecast2Icon').appendChild(forecastWeatherImage);
+
+                displayForecastTemp = document.createElement('li');
+                document.getElementById('forecast2Stats').appendChild(displayForecastTemp);
+                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
+
+                displayForecastWindspeed = document.createElement('li');
+                document.getElementById('forecast2Stats').appendChild(displayForecastWindspeed);
+                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
+
+                displayForecastHumidity = document.createElement('li');
+                document.getElementById('forecast2Stats').appendChild(displayForecastHumidity);
+                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
             break;
 
             case 2:
                 document.getElementById("forecast3Date").textContent = convertedForecastDate;
+                document.getElementById('forecast3Icon').appendChild(forecastWeatherImage);
+
+                displayForecastTemp = document.createElement('li');
+                document.getElementById('forecast3Stats').appendChild(displayForecastTemp);
+                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
+
+                displayForecastWindspeed = document.createElement('li');
+                document.getElementById('forecast3Stats').appendChild(displayForecastWindspeed);
+                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
+
+                displayForecastHumidity = document.createElement('li');
+                document.getElementById('forecast3Stats').appendChild(displayForecastHumidity);
+                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
             break;
 
             case 3:
                 document.getElementById("forecast4Date").textContent = convertedForecastDate;
+                document.getElementById('forecast4Icon').appendChild(forecastWeatherImage);
+
+                displayForecastTemp = document.createElement('li');
+                document.getElementById('forecast4Stats').appendChild(displayForecastTemp);
+                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
+
+                displayForecastWindspeed = document.createElement('li');
+                document.getElementById('forecast4Stats').appendChild(displayForecastWindspeed);
+                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
+
+                displayForecastHumidity = document.createElement('li');
+                document.getElementById('forecast4Stats').appendChild(displayForecastHumidity);
+                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
             break;
 
             case 4:
                 document.getElementById("forecast5Date").textContent = convertedForecastDate;
+                document.getElementById('forecast5Icon').appendChild(forecastWeatherImage);
+
+                displayForecastTemp = document.createElement('li');
+                document.getElementById('forecast5Stats').appendChild(displayForecastTemp);
+                displayForecastTemp.textContent = "Temp: " + forecastTemp + " °F"
+
+                displayForecastWindspeed = document.createElement('li');
+                document.getElementById('forecast5Stats').appendChild(displayForecastWindspeed);
+                displayForecastWindspeed.textContent = "Windspeed: " + forecastWindspeed + " MPH"
+
+                displayForecastHumidity = document.createElement('li');
+                document.getElementById('forecast5Stats').appendChild(displayForecastHumidity);
+                displayForecastHumidity.textContent = "Humidity: " + forecastHumidity + " %"
             break;
 
             default:
                 break;
-    }
 
+        }
     }
 
   });
