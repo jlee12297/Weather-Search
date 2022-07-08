@@ -9,10 +9,19 @@ var currentWindspeed
 var currentHumidity
 var currentUVI
 var currentWeatherIcon
+var userCityInput
 
-//geocoding API to take city name search user input, get lat and long, to use in given weather API
+//search button function
+var searchButton = $('#searchButton');
+searchButton.on('click', function() {
+
+    userCityInput = $('input[id="userInput"]').val();
+    console.log(userCityInput)
+    
+   //geocoding API to take city name search user input, get lat and long, to use in given weather API
 //will also be grabbing "cityname" for display from here
-geocodingUrl = 'https://api.geoapify.com/v1/geocode/search?text=Seattle&filter=countrycode:us&apiKey=a5d5ba0ac854494492b5801b965f9c17';
+//geocodingUrl = 'https://api.geoapify.com/v1/geocode/search?text=Seattle&filter=countrycode:us&apiKey=a5d5ba0ac854494492b5801b965f9c17';
+geocodingUrl = 'https://api.geoapify.com/v1/geocode/search?text=' + userCityInput + '&filter=countrycode:us&apiKey=a5d5ba0ac854494492b5801b965f9c17';
 
 fetch(geocodingUrl)
   .then(function (response) {
@@ -23,9 +32,9 @@ fetch(geocodingUrl)
     console.log(latitude);
     longitude = (data.features[0].properties.lon);
     console.log(longitude);
-    displayCityName = (data.query.text.toUpperCase());
+    displayCityName = userCityInput;
     console.log(displayCityName);
-
+    console.log(data)
     //display chosen city name on page
     document.getElementById("cityName").textContent = displayCityName
   });
@@ -33,7 +42,7 @@ fetch(geocodingUrl)
   
 //given weather API will take input from geocoding API to display weather info for the user's desired city
 //will be grabbing the date, temperature, windspeed, humidity, UV Index (also icon of conditions if possible)
-weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=30.489772&lon=-99.771335&units=imperial&appid=a3cbff459cf1aec9060b5cbeb75cb3c8';
+weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=47.6038321&lon=-122.330062&units=imperial&appid=a3cbff459cf1aec9060b5cbeb75cb3c8';
 
 fetch(weatherUrl)
   .then(function (response) {
@@ -198,3 +207,10 @@ fetch(weatherUrl)
     }
 
   });
+
+   
+    //return false so search button click does not automatically refresh
+    return false;
+})
+
+
