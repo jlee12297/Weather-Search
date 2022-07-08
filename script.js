@@ -26,7 +26,7 @@ fetch(geocodingUrl)
     displayCityName = (data.query.text.toUpperCase());
     console.log(displayCityName);
 
-
+    //display chosen city name on page
     document.getElementById("cityName").textContent = displayCityName
   });
   
@@ -44,26 +44,50 @@ fetch(weatherUrl)
 
     //converting given unix time to easier to read standard date and time format
     var unixDate = data.current.dt;
-    var unixDate2 = moment.unix(unixDate).utc();
-    currentDate = unixDate2._d;
-    console.log(currentDate);
+    var unixDate2 = moment.unix(unixDate).format("L");
+    currentDate = unixDate2;
     currentTemp = data.current.temp;
-    console.log(currentTemp);
     currentWindspeed = data.current.wind_speed;
-    console.log(currentWindspeed);
     currentHumidity = data.current.humidity;
-    console.log(currentHumidity);
     currentUVI = data.current.uvi;
-    console.log(currentUVI);
     currentWeatherIcon = data.current.weather[0].icon;
-    console.log(currentWeatherIcon);
 
+    //display current date and time
     document.getElementById("currentDate").textContent = currentDate;
 
+    //display weather conditions icon
     src = 'http://openweathermap.org/img/wn/' + currentWeatherIcon + '@2x.png';
     currentWeatherImage = document.createElement('img');
     currentWeatherImage.src = src;
 
- 
     document.getElementById('currentIcon').appendChild(currentWeatherImage);
+
+    //display current temperaure fahrenheit
+    displayCurrentTemp = document.createElement('li');
+    document.getElementById('currentStats').appendChild(displayCurrentTemp);
+    displayCurrentTemp.textContent = "Temp: " + currentTemp + " °F"
+
+    //display current windspeed
+    displayCurrentWindspeed = document.createElement('li');
+    document.getElementById('currentStats').appendChild(displayCurrentWindspeed);
+    displayCurrentWindspeed.textContent = "Windspeed: " + currentWindspeed + " MPH"
+
+    //display current humidity
+    displayCurrentHumidity = document.createElement('li');
+    document.getElementById('currentStats').appendChild(displayCurrentHumidity);
+    displayCurrentHumidity.textContent = "Humidity: " + currentHumidity + " %"
+
+    //display current UVI
+    displayCurrentUVI = document.createElement('li');
+    document.getElementById('currentStats').appendChild(displayCurrentUVI);
+    displayCurrentUVI.textContent = "UVI Index: " + currentWindspeed
+
+    //=======================================================================================================================
+    //Weather API pulls to pull date for FORECASTED days
+    console.log(data.daily)
+    for (index = 1; index < 6; index++) {
+        forecastData = data.daily[i];
+        
+    }
+
   });
